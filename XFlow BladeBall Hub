@@ -1,0 +1,63 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "XFlow Bladeball Hub", HidePremium = false, IntroText = "Made By XFlowRoblox", SaveConfig = false, ConfigFolder = "XFlow Bladeball Hub"})
+
+OrionLib:MakeNotification({
+	Name = "Welcome!",
+	Content = "Make Sure To Use An Alt🤫",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+local MainTab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = MainTab:AddSection({
+	Name = "Important"
+})
+
+MainTab:AddButton({
+	Name = "Auto Parry",
+	Callback = function()
+        getgenv().ScriptConfig = {
+    -- Distance in stud before the automatic triggers,
+    -- you may change even after you have ran the script if you desire!
+    -- Just be sure to REMOVE the loadstring, or else you will face some... issues
+	DistanceBeforeParry = 35,
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Sussy-Tech/Scripts/main/BladeBall.lua"))()
+  	end    
+})
+
+MainTab:AddSlider({
+	Name = "Walkspeed Slider",
+	Min = 16,
+	Max = 100,
+	Default = 5,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Speed",
+	Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
+	end    
+})
+
+local CreditsTab = Window:MakeTab({
+	Name = "Credits",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+CreditsTab:AddButton({
+	Name = "Credits-@abdellahdisco",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
+
+end
+OrionLib:Init()
