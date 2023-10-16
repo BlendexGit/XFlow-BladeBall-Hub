@@ -55,11 +55,10 @@ local CreditsTab = Window:MakeTab({
 })
 
 CreditsTab:AddButton({
-    Name = "Credits-@abdellahdisco",
+    Name = "Credits-<@1087049514306772992>",
     Callback = function()
         print("button pressed")
     end
 })
 
 OrionLib:Init()
-
