@@ -27,11 +27,8 @@ local Section = MainTab:AddSection({
 MainTab:AddButton({
     Name = "Auto Parry",
     Callback = function()
-        getgenv().ScriptConfig = {
-            DistanceBeforeParry = 35,
-        }
-
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Sussy-Tech/Scripts/main/BladeBall.lua"))()
+        _G.UI_Size = 200 -- config ui size
+loadstring(game:HttpGet("https://raw.githubusercontent.com/3345-c-a-t-s-u-s/-beta-/main/AutoParry.lua"))()
     end
 })
 
